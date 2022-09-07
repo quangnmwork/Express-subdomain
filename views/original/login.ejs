@@ -1,0 +1,44 @@
+<%- include('./partials/header'); %>
+<h1>LOGIN</h1>
+<p>Hello, welcome to the Login page.</p>
+
+<p>
+  Demo accounts:
+  <ul>
+    <li>Company One: <ul>
+        <li>Subdomain: my-comp</li>
+        <li>user1@comp.com/123456</li>
+        <li>user2@comp.com/123456</li>
+    </ul></li>
+    <li>Company Two: <ul>
+      <li>Subdomain: my-other-comp</li>
+      <li>user1@ocomp.com/123456</li>
+  </ul></li>
+  </ul>
+</p>
+<% if(typeof isValid != 'undefined' && !isValid) { %>
+<p>Your email or password is incorrect.</p>
+<% } %>
+
+<br/>
+<form method="post" action="/login">
+  <table>
+    <tr>
+      <td>Email</td>
+      <td>
+        <input type="email" name="email" value="user1@comp.com" />
+      </td>
+    </tr>
+    <tr>
+      <td>Password</td>
+      <td>
+        <input type="password" name="password" value="123456"/>
+      </td>
+    </tr>
+    <tr>
+      <td colspan="2"><button type="submit">Submit</button></td>
+    </tr>
+  </table>
+</form>
+</table>
+<%- include('./partials/footer') %>

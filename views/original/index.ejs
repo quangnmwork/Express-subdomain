@@ -1,0 +1,15 @@
+<%- include('./partials/header') %>
+<h1>HOME</h1>
+<% if (user) { %>
+<p>Hello <strong><%= user.email%></strong>, welcome to the home page.</p>
+<p>
+  Please <a href="<%= fullUrlSubdomain%>">click here</a> for your company's
+  dashboard page.
+</p>
+<p>or <a href="/logout">Log out</a></p>
+<% } else { %>
+<p>Please register or log in to start using our services.</p>
+
+<p><a href="/register">REGISTER</a></p>
+<p><a href="/login">LOGIN</a></p>
+<% } %> <%- include('./partials/footer') %>
